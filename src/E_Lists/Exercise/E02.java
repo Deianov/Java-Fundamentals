@@ -11,10 +11,10 @@ public class E02 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
-        List<Integer> list = Arrays.stream(input.split(" ")).map(Integer::parseInt).collect(Collectors.toList());
+        List<Integer> list = Arrays.stream(input.split("\\s+")).map(Integer::parseInt).collect(Collectors.toList());
 
         while (!"end".equals(input = scanner.nextLine().toLowerCase())) {
-            String[] line = input.split(" ");
+            String[] line = input.split("\\s+");
             if("delete".equals(line[0])) {
                 int element = Integer.parseInt(line[1]);
                 deleteElement(list,element);
