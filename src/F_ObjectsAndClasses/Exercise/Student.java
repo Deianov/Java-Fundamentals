@@ -13,19 +13,19 @@ public class Student {
     private String lastName;
     private Double grade;
 
-    public String getFirstName() {
+    private String getFirstName() {
         return firstName;
     }
 
-    public String getLastName() {
+    private String getLastName() {
         return lastName;
     }
 
-    public Double getGrade() {
+    private Double getGrade() {
         return grade;
     }
 
-    public Student(String firstName, String lastName, Double grade) {
+    private Student(String firstName, String lastName, Double grade) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.grade = grade;

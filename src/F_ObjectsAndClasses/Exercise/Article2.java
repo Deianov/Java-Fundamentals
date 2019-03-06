@@ -13,21 +13,9 @@ public class Article2 {
     private String content;
     private String author;
 
-    private void rename(String title) { this.title = title; }
-    private void changeAuthor(String author) { this.author = author; }
-    private void edit(String content) { this.content = content; }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
+    private String getTitle() { return title; }
+    private String getContent() { return content; }
+    private String getAuthor() { return author; }
 
     private Article2(String title, String content, String author) {
         this.title = title;

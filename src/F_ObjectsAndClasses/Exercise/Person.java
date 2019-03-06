@@ -10,10 +10,10 @@ public class Person {
     private String personName;
     private int personAge;
 
-    public String getPersonName() { return personName; }
-    public int getPersonAge() { return personAge; }
+    private String getPersonName() { return personName; }
+    private int getPersonAge() { return personAge; }
 
-    public Person(String personName, int personAge) {
+    private Person(String personName, int personAge) {
         this.personName = personName;
         this.personAge = personAge;
     }
