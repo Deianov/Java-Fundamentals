@@ -10,14 +10,14 @@ public class Song {
     private String name;
     private String time;
 
-    public void setTypeList(String typeList) { this.typeList = typeList; }
-    public String getTypeList() { return typeList; }
+    private void setTypeList(String typeList) { this.typeList = typeList; }
+    private String getTypeList() { return typeList; }
 
-    public void setTime(String time) { this.time = time; }
-    public String getTime() { return time; }
+    private void setTime(String time) { this.time = time; }
+    private String getTime() { return time; }
 
-    public void setName(String name) { this.name = name; }
-    public String getName() { return name; }
+    private void setName(String name) { this.name = name; }
+    private String getName() { return name; }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

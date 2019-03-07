@@ -13,17 +13,17 @@ public class Student2 {
     private int age;
     private String city;
 
-    public void setFirstName(String firstName) { this.firstName = firstName; }
-    public String getFirstName() { return firstName; }
+    private void setFirstName(String firstName) { this.firstName = firstName; }
+    private String getFirstName() { return firstName; }
 
-    public void setLastName(String lastName) { this.lastName = lastName; }
-    public String getLastName() { return lastName; }
+    private void setLastName(String lastName) { this.lastName = lastName; }
+    private String getLastName() { return lastName; }
 
-    public void setAge(int age) { this.age = age; }
-    public int getAge() { return age; }
+    private void setAge(int age) { this.age = age; }
+    private int getAge() { return age; }
 
-    public void setCity(String city) { this.city = city; }
-    public String getCity() { return city; }
+    private void setCity(String city) { this.city = city; }
+    private String getCity() { return city; }
 
     private Student2(String firstName, String lastName, int age, String city) {
         this.firstName = firstName;
