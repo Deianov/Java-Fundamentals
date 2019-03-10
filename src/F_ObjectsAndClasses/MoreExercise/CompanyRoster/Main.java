@@ -1,3 +1,5 @@
+//01. Company Roster
+
 package F_ObjectsAndClasses.MoreExercise.CompanyRoster;
 
 import java.util.Scanner;
@@ -18,8 +20,14 @@ public class Main {
 
             Employee employee = new Employee(name, salary, position, departmentName);
 
-            if (data.length > 4) { employee.setEmail(data[4]); }
-            if (data.length > 5) { employee.setAge(Integer.parseInt(data[5])); }
+            if (data.length > 4) {
+                if (isValidMail(data[4])) employee.setEmail(data[4]);
+                else employee.setAge(Integer.parseInt(data[4]));
+            }
+            if (data.length > 5) {
+                if (isValidMail(data[5])) employee.setEmail(data[5]);
+                else employee.setAge(Integer.parseInt(data[5]));
+            }
 
             department.addEmployee(employee);
         }
@@ -42,5 +50,9 @@ public class Main {
                     .sorted((e1, e2) -> Double.compare(e2.getSalary(), e1.getSalary()))
                     .forEach(e -> System.out.println(e.toString()));
         }
+    }
+
+    private static boolean isValidMail(String mail) {
+        return mail.contains("@") && mail.contains(".");
     }
 }

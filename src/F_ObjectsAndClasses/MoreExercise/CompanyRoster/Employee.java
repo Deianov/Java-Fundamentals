@@ -10,16 +10,16 @@ public class Employee {
     private int age;
 
     private String getName() { return name; }
-    public double getSalary() { return salary; }
-    public String getDepartment() { return department; }
+    double getSalary() { return salary; }
+    String getDepartment() { return department; }
 
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
+    private String getEmail() { return email; }
+    void setEmail(String email) { this.email = email; }
 
-    public int getAge() { return age; }
-    public void setAge(int age) { this.age = age; }
+    private int getAge() { return age; }
+    void setAge(int age) { this.age = age; }
 
-    public Employee(String name, double salary, String position, String department) {
+    Employee(String name, double salary, String position, String department) {
         this.name = name;
         this.salary = salary;
         this.position = position;
