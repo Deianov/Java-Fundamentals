@@ -3,31 +3,31 @@ package F_ObjectsAndClasses.MoreExercise.TeamworkProjects;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Team {
+class Team {
 
     private String name;
     private int membersCount;
-    private User owner;
-    private List<User> members;
+    private String owner;
+    private List<String> members;
 
-    public String getName() { return name; }
+    String getName() { return name; }
     int getMembersCount() { return membersCount; }
-    List<User> getMembers() { return members; }
+    String getOwner() { return owner; }
+    List<String> getMembers() { return members; }
 
     Team(String name, User owner) {
+        String userName = owner.getName();
         this.name = name;
-        this.membersCount = 1;
-        this.owner = owner;
+        this.membersCount = 0;
+        this.owner = userName;
         this.members = new ArrayList<>();
-        this.members.add(owner);
         owner.setOwner(this.name);
-        owner.setMember(this.name);
-        System.out.printf("Team %s has been created by %s!%n", name, owner.getName());
+        System.out.printf("Team %s has been created by %s!%n", name, userName);
     }
 
     void addUser(User user) {
         user.setMember(this.getName());
-        this.members.add(user);
+        this.members.add(user.getName());
         this.membersCount++;
     }
 }

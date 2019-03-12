@@ -2,88 +2,98 @@
 
 package F_ObjectsAndClasses.MoreExercise.TeamworkProjects;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
-import java.util.stream.Collectors;
+
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         int count = Integer.parseInt(input);
+        if (count <= 0) return;
 
         Teams teams = new Teams();
         Users users = new Users();
 
         for (int i = 0; i < count ; i++) {
             String[] data = scanner.nextLine().split("(-)+");
+            if (data.length < 2) continue;
             String userName = data[0];
             String teamName = data[1];
+            if (userName.length() == 0 || teamName.length() == 0) continue;
+
+            Team team = teams.getTeam(teamName);
+
+            if (team != null) {
+                System.out.printf("Team %s was already created!%n", teamName);
+                continue;
+            }
 
             User user = users.getUser(userName);
+
             if (user == null) {
                 user = new User(userName);
                 users.addUser(user);
             }
 
-            if (user.getMember() != null) {
+            if (user.getOwner() != null) {
                 System.out.printf("%s cannot create another team!%n", userName);
+                continue;
             }
 
-            Team team = teams.getTeam(teamName);
-            if (team == null) {
-                team = new Team(teamName, user);
-                teams.addTeam(team);
-            } else {
-                System.out.printf("Team %s was already created!%n", teamName);
-            }
+            team = new Team(teamName, user);
+            teams.addTeam(team);
         }
 
         while (!"end of assignment".equalsIgnoreCase(input = scanner.nextLine())) {
             String[] data = input.split("(->)+");
+            if (data.length < 2) continue;
             String userName = data[0];
             String teamName = data[1];
-
-            User user = users.getUser(userName);
-            if (user == null) {
-                user = new User(userName);
-                users.addUser(user);
-            }
+            if (userName.length() == 0 || teamName.length() == 0) continue;
 
             Team team = teams.getTeam(teamName);
 
             if (team == null) {
                 System.out.printf("Team %s does not exist!%n", teamName);
+                continue;
+            }
+
+            User user = users.getUser(userName);
+
+            if (user == null) {
+                user = new User(userName);
+                users.addUser(user);
+            }
+
+            if (user.getMember() != null || user.getOwner() != null) {
+                System.out.printf("Member %s cannot join team %s!%n", userName, teamName);
+            } else  {
+                team.addUser(user);
+            }
+        }
+        List<Team> teamValid = new ArrayList<>();
+        List<Team> teamDisband = new ArrayList<>();
+
+        for (Team team : teams.getTeamList()) {
+            if (team.getMembersCount() > 0) {
+                teamValid.add(team);
             } else {
-                if (user.getMember() != null) {
-                    System.out.printf("Member %s cannot join team %s!%n", userName, teamName);
-                } else  {
-                    team.addUser(user);
-                }
+                teamDisband.add(team);
             }
         }
 
-        List<Team> teamDisband = teams
-                .getTeamList()
-                .stream()
-                .filter(e -> e.getMembersCount() == 1)
-                .collect(Collectors.toList());
-
-        List<Team> teamValid = teams
-                .getTeamList()
-                .stream()
-                .filter(e -> e.getMembersCount() > 1)
-                .collect(Collectors.toList());
-
         teamValid.sort(Comparator.comparing(e -> e.getName()));
         teamValid.sort(Comparator.comparingInt(Team::getMembersCount).reversed());
+        teamDisband.sort(Comparator.comparing(e -> e.getName()));
 
         for (Team team : teamValid) {
             System.out.println(team.getName());
-            int c = 0;
-            for (User user : team.getMembers()) {
-                System.out.println((c++ == 0 ? "- " : "-- ") + user.getName());
+            System.out.println("- " + team.getOwner());
+            List<String> teamUsers = team.getMembers();
+            Collections.sort(teamUsers);
+            for (String user : teamUsers) {
+                System.out.printf("-- %s%n", user);
             }
         }
 

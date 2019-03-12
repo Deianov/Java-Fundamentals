@@ -1,6 +1,6 @@
 package F_ObjectsAndClasses.MoreExercise.TeamworkProjects;
 
-public class User {
+class User {
 
     private String name;
     private String owner;
@@ -8,6 +8,7 @@ public class User {
 
     public String getName() { return name; }
     void setOwner(String owner) { this.owner = owner; }
+    String getOwner() { return owner; }
     String getMember() { return member; }
     void setMember(String member) { this.member = member; }
 
