@@ -1,6 +1,6 @@
 // 04. List Manipulation Basics - 80%
 
-package E_Lists.Lab;
+package E_ArrayList.Lab;
 
 import java.util.*;
 import java.util.stream.Collectors;

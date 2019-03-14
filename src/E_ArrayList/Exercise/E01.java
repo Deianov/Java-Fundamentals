@@ -1,6 +1,6 @@
 // 01. Train
 
-package E_Lists.Exercise;
+package E_ArrayList.Exercise;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,6 +1,6 @@
 // 06. List of Products
 
-package E_Lists.Lab;
+package E_ArrayList.Lab;
 
 import java.util.ArrayList;
 import java.util.Collections;

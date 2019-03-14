@@ -1,6 +1,6 @@
 // 07. Remove Negatives and Reverse
 
-package E_Lists.Lab;
+package E_ArrayList.Lab;
 
 import java.util.*;
 import java.util.stream.Collectors;

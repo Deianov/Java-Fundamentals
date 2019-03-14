@@ -1,6 +1,6 @@
 // 07. Append Arrays
 
-package E_Lists.Exercise;
+package E_ArrayList.Exercise;
 
 import java.util.*;
 import java.util.stream.Collectors;

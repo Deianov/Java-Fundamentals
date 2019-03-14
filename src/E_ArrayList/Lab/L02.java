@@ -1,6 +1,6 @@
 // 02. Gauss' Trick
 
-package E_Lists.Lab;
+package E_ArrayList.Lab;
 
 import java.util.Arrays;
 import java.util.List;

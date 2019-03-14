@@ -1,6 +1,6 @@
 //01. Messaging
 
-package E_Lists.MoreExercise;
+package E_ArrayList.MoreExercise;
 
 import java.util.*;
 import java.util.Scanner;

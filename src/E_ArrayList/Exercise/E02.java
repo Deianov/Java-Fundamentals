@@ -1,6 +1,6 @@
 // 02. Change List
 
-package E_Lists.Exercise;
+package E_ArrayList.Exercise;
 
 import java.util.Arrays;
 import java.util.List;

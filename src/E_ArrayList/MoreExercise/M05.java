@@ -1,6 +1,6 @@
 //05. Drum Set
 
-package E_Lists.MoreExercise;
+package E_ArrayList.MoreExercise;
 
 import java.util.ArrayList;
 import java.util.Arrays;

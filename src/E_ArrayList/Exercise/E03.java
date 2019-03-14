@@ -1,6 +1,6 @@
 // 03. House Party
 
-package E_Lists.Exercise;
+package E_ArrayList.Exercise;
 
 import java.util.ArrayList;
 import java.util.List;

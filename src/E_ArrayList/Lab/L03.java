@@ -1,6 +1,6 @@
 // 03. Merging Lists
 
-package E_Lists.Lab;
+package E_ArrayList.Lab;
 
 import java.util.ArrayList;
 import java.util.Arrays;

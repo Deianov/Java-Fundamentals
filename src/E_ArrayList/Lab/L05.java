@@ -1,6 +1,6 @@
 // 05. List Manipulation Advanced
 
-package E_Lists.Lab;
+package E_ArrayList.Lab;
 
 import java.util.*;
 import java.util.stream.Collectors;

@@ -1,6 +1,6 @@
 // 1.Sum Adjacent Equal Numbers
 
-package E_Lists.Lab;
+package E_ArrayList.Lab;
 
 import java.text.DecimalFormat;
 import java.util.*;

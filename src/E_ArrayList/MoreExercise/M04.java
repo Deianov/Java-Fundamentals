@@ -1,6 +1,6 @@
 //04. Mixed up Lists
 
-package E_Lists.MoreExercise;
+package E_ArrayList.MoreExercise;
 
 import java.util.*;
 import java.util.stream.Collectors;

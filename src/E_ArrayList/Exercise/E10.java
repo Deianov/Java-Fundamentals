@@ -1,6 +1,6 @@
 //10. SoftUni Course Planning
 
-package E_Lists.Exercise;
+package E_ArrayList.Exercise;
 
 import java.util.ArrayList;
 import java.util.Arrays;

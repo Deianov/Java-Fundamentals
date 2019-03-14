@@ -1,6 +1,6 @@
 //03. Take/Skip Rope
 
-package E_Lists.MoreExercise;
+package E_ArrayList.MoreExercise;
 
 import java.util.ArrayList;
 import java.util.List;
