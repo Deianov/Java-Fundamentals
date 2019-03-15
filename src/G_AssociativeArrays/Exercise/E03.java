@@ -8,34 +8,47 @@ public class E03 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        Map<String, String> keyMaterials = new LinkedHashMap<>();
-        keyMaterials.put("shards", "Shadowmourne");
-        keyMaterials.put("fragments", "Valanyr");
-        keyMaterials.put("motes", "Dragonwrath");
-
         Map<String, Integer> materials = new HashMap<>();
+        materials.put("shards", 0);
+        materials.put("fragments", 0);
+        materials.put("motes", 0);
+
         String item = null;
+        boolean end = false;
 
-        while (true) {
+        while (!end) {
+            String data[] = scanner.nextLine().toLowerCase().split("\\s+");
 
-            // TODO: 15.03.2019 read 
-            String material = scanner.nextLine().toLowerCase();
-            int quantity = Integer.parseInt(scanner.nextLine());
+            for (int i = 0; i < data.length ; i = i + 2) {
 
-            materials.putIfAbsent(material, 0);
-            int newQuantity = materials.get(material) + quantity;
-            materials.put(material, newQuantity);
-            if (newQuantity >= 250 && isLegendary(material) != null ) {
-                materials.put(material, newQuantity - 250);
-                item = isLegendary(material);
-                break;
+                int quantity = Integer.parseInt(data[i]);
+                String material = data[i + 1];
+
+                materials.putIfAbsent(material, 0);
+                int newQuantity = materials.get(material) + quantity;
+                materials.put(material, newQuantity);
+                if (newQuantity >= 250 && isLegendary(material) != null ) {
+                    materials.put(material, newQuantity - 250);
+                    item = isLegendary(material);
+                    end = true;
+                    break;
+                }
             }
         }
 
         System.out.printf("%s obtained!%n", item);
-        materials.entrySet().stream()
+        materials
+                .entrySet()
+                .stream()
                 .filter(entry -> isLegendary(entry.getKey()) != null)
-                .sorted(Map.Entry.comparingByValue())
+                .sorted(Map.Entry.<String, Integer>comparingByValue().reversed()
+                .thenComparing(Map.Entry.comparingByKey()))
+                .forEach(E03::printMaterial);
+        materials
+                .entrySet()
+                .stream()
+                .filter(entry -> isLegendary(entry.getKey()) == null)
+                .sorted(Map.Entry.comparingByKey())
                 .forEach(E03::printMaterial);
     }
 
