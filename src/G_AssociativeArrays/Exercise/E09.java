@@ -26,6 +26,7 @@ public class E09 {
             sides.putIfAbsent(sideName, new TreeSet<>());
 
             if (isMake) {
+                // add user if not found
                 if (!foundUser) {
                     sides.get(sideName).add(userName);
                 }
