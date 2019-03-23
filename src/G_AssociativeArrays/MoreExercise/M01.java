@@ -6,6 +6,7 @@ import java.util.*;
 
 public class M01 {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         String input;
 
@@ -48,6 +49,7 @@ public class M01 {
 
         mapUsers.forEach((key, value) -> value.printUser());
     }
+
 }
 
 class User {
