@@ -1,5 +1,5 @@
 //01. Word
-package Z_Exams.demo_final_exam.problem1;
+package Z_Exams.final_exam_demo.problem1;
 
 import java.util.*;
 

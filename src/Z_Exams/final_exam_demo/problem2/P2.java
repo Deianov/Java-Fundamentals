@@ -1,5 +1,5 @@
 // 02. Deciphering
-package Z_Exams.demo_final_exam.problem2;
+package Z_Exams.final_exam_demo.problem2;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;
