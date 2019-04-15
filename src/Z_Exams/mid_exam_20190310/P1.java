@@ -21,6 +21,10 @@ public class P1 {
 
         double currentExpenses = expensesFood + expensesHotel;
 
+        if (currentExpenses > budget){
+            System.out.printf("Not enough money to continue the trip. You need %.2f$ more.", currentExpenses - budget);
+            return;
+        }
         for (int day = 1; day <= tripDays; day++) {
             double travelledDistance = Double.parseDouble(scanner.nextLine());
 
@@ -32,12 +36,11 @@ public class P1 {
             if (day % 7 == 0) {
                 currentExpenses = currentExpenses - (currentExpenses / groupCount);
             }
+            if (currentExpenses > budget){
+                System.out.printf("Not enough money to continue the trip. You need %.2f$ more.", currentExpenses - budget);
+                return;
+            }
         }
-
-        if (currentExpenses > budget) {
-            System.out.printf("Not enough money to continue the trip. You need %.2f$ more.", currentExpenses - budget);
-        } else {
-            System.out.printf("You have reached the destination. You have %.2f$ budget left.", budget - currentExpenses);
-        }
+        System.out.printf("You have reached the destination. You have %.2f$ budget left.", budget - currentExpenses);
     }
 }
