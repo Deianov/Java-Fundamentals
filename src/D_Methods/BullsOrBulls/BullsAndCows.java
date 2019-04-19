@@ -1,4 +1,4 @@
-package D_Methods_BullsOrBulls;
+package D_Methods.BullsOrBulls;
 
 import javax.swing.*;
 
@@ -149,7 +149,7 @@ public class BullsAndCows extends JFrame implements ActionListener {
 
 //    After our form is done, it`s time to give it some functionality. Let's start with our input.
 //    After user write some number in the input field we should validate it, check how many cows and bulls he has,
-//    and return a result. Let`s create a method called runGuess(String imput) in the D_Methods_BullsOrBulls.BullsAndCows.java
+//    and return a result. Let`s create a method called runGuess(String imput) in the BullsAndCows.java
 //    class. This method will do the following:
     private void runGuess(String numString) {
         int bulls = 0;

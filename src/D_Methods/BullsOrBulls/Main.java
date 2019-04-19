@@ -1,4 +1,4 @@
-package D_Methods_BullsOrBulls;
+package D_Methods.BullsOrBulls;
 
 public class Main {
     public static void main(String[] args) {
