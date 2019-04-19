@@ -2,10 +2,7 @@
 //03. Last Stop
 package Z_Exams.mid_exam_20190310;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class P3 {
